@@ -2,27 +2,27 @@ import java.util.ArrayList;
 public class StepTracker
 {
  /* to be implemented here */
- private int minS, daysA, allS, numD;
+ private int minSteps, totalSteps, totalDays, actDays;
  public StepTracker(int a) {
-  minS = a;
-  daysA = 0;
-  allS = 0;
-  numD = 0;
+  minSteps = a;
+  actDays = 0;
+  totalSteps = 0;
+  totalDays = 0;
  }
  public int activeDays() {
-  return daysA;
+  return actDays;
  }
  public void addDailySteps(int steps) {
-  numD++;
-  allS += steps;
-  if (steps > minS) {
+  totalDays++;
+  totalSteps += steps;
+  if (steps > minSteps) {
    daysA++;
   }
  }
  public double averageSteps() {
-  if (numD == 0) {
+  if (totalDays == 0) {
    return 0.0;
   }
-  return (double) allS / numD;
+  return (double) totalSteps / totalDays;
  }
 } 
